@@ -6,16 +6,23 @@ import { About } from "../components/About";
 import { Skills } from "../components/Skills";
 import { Project } from "../components/Project";
 import { Footer } from "../components/Footer";
+import { LightBackground } from "../components/LightBackground";
+import { useState } from "react";
 
 export const Home = () => {
+    const [isDark, setIsDark] = useState(false);
+
     return  (
         <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
 
             {/* theme */}
-            <ThemeToggle />
+            <ThemeToggle onThemeChange={setIsDark} />
 
             {/* background effects */}
-            <StarBackground />
+            {/* <LightBackground />
+            <StarBackground /> */}
+            {!isDark && <LightBackground />}
+            {isDark && <StarBackground />}
 
             {/* navbar */}
             <NavBar/>
@@ -24,8 +31,8 @@ export const Home = () => {
             <main>
                 <Landing />
                 <About/>
-                <Skills/>
                 <Project/>
+                <Skills/>
             </main>
 
             {/* Footer */}

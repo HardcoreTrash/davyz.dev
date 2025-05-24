@@ -2,31 +2,41 @@ import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import {cn} from '@/lib/utils';
 
-export const ThemeToggle = () => {
+export const ThemeToggle = ({ onThemeChange }) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect (() => {
+        // const storedTheme = localStorage.getItem("theme");
+        // if (storedTheme == "dark" || !storedTheme) {
+        //     setIsDarkMode(true);
+        //     document.documentElement.classList.add("dark");
+        // } else {
+        //     localStorage.setItem("theme", "light");
+        //     setIsDarkMode(false);
+        // }
         const storedTheme = localStorage.getItem("theme");
-        if (storedTheme == "dark") {
-            setIsDarkMode(true);
-            document.documentElement.classList.add("dark");
-        } else {
-            localStorage.setItem("theme", "light");
-            setIsDarkMode(false);
-        }
+        const dark = storedTheme === "dark" || !storedTheme;
+        setIsDarkMode(dark);
+        document.documentElement.classList.toggle("dark", dark);
+        onThemeChange?.(dark);
     }, [])
 
     const toggleTheme = () => {
-        if (isDarkMode) {
-            document.documentElement.classList.remove("dark");
-            localStorage.setItem("theme", "light");
-            setIsDarkMode(false);
-        }
-        else {
-            document.documentElement.classList.add("dark");
-            localStorage.setItem("theme", "dark");
-            setIsDarkMode(true);
-        }
+        // if (isDarkMode) {
+        //     document.documentElement.classList.remove("dark");
+        //     localStorage.setItem("theme", "light");
+        //     setIsDarkMode(false);
+        // }
+        // else {
+        //     document.documentElement.classList.add("dark");
+        //     localStorage.setItem("theme", "dark");
+        //     setIsDarkMode(true);
+        // }
+        const nextTheme = !isDarkMode;
+        setIsDarkMode(nextTheme);
+        document.documentElement.classList.toggle("dark", nextTheme);
+        localStorage.setItem("theme", nextTheme ? "dark" : "light");
+        onThemeChange?.(nextTheme);
     }
 
     return <button onClick={toggleTheme} className={cn("fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full transition-colors duration-300", "focus:outline-hidden"

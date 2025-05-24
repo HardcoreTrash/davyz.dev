@@ -1,6 +1,24 @@
 import { ArrowDown } from "lucide-react"
+import { useEffect, useState } from "react";
 
 export const Landing = () => {
+
+    const [show, setShow] = useState(true);
+    const hideScroll = () => {
+        if (window.scrollY > 100) {
+            setShow(false);
+        } else {
+            setShow(true);
+        }
+    }
+
+    useEffect (() => {
+        window.addEventListener('scroll', hideScroll)
+        return () => {
+            window.removeEventListener('scroll', hideScroll);
+        }
+    }, [])
+
     return <section id="landing" className="relative min-h-screen flex flex-col items-center justify-center px-4">
 
         <div className="container max-w-4xl mx-auto text-center z-10">
@@ -11,7 +29,7 @@ export const Landing = () => {
                     <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2"> Zhang </span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-muted-forewground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+                <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
                     I'm a Final Year Bachelor of Aerospace Engineering (Honours) and Computer Science at UNSW
                 </p>
                 <div className="pt-4 opacity-0 animate-fade-in-delay-4">
@@ -22,7 +40,7 @@ export const Landing = () => {
             </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+        <div className={`${show  ? 'opacity-100' : 'opacity-0'} absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce`}>
             <span className="text-sm text-muted-foreground mb-2">
                 Scroll
             </span>

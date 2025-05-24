@@ -19,10 +19,11 @@ export const About = () => {
                         I am well skilled in various programming languages (C++, Python). Have basic knowledge of 3D modelling software (Solidworks) and other CAD softwares (AutoDesk, Adobe).
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-                        <a href="#contact" className="cosmic-button">
+                        {/* <a href="#contact" className="cosmic-button"> */}
+                        <a href="https://www.linkedin.com/in/dz72/" target="_blank" className="cosmic-button">
                             Get in Touch
                         </a>
-                        <a href="" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
+                        <a href="src/assets/David_Zhang_CV.docx" target="_blank" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
                             Download CV
                         </a>
                     </div>
@@ -54,7 +55,7 @@ export const About = () => {
                                     Mobile Development
                                 </h4>
                                 <p className="text-muted-foreground">
-                                    Developed a cross platform mobile application built using Flutter for frontend, .Net for and MySQL as a relational database.
+                                    Developed a cross platform mobile application built using Flutter for frontend, dotNet for and MySQL as a relational database.
                                 </p>
                             </div>
 
