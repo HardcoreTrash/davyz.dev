@@ -9,9 +9,11 @@ import { Footer } from "../components/Footer";
 import { LightBackground } from "../components/LightBackground";
 import { useState } from "react";
 import { Contact } from "../components/Contact";
+import {cn} from '@/lib/utils';
 
 export const Home = () => {
     const [isDark, setIsDark] = useState(true);
+    console.log(isDark);
 
     return  (
         <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -20,8 +22,6 @@ export const Home = () => {
             <ThemeToggle onThemeChange={setIsDark} />
 
             {/* background effects */}
-            {/* <LightBackground />
-            <StarBackground /> */}
             {!isDark && <LightBackground />}
             {isDark && <StarBackground />}
 

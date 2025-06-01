@@ -93,6 +93,7 @@ export const LightBackground = () => {
         id="tsparticles"
         particlesLoaded={particlesLoaded}
         options={options}
+        className="absolute top-0 left-0 w-full h-full"
       />
     );
 };
