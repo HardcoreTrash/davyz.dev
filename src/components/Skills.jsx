@@ -45,7 +45,7 @@ export const Skills = () => {
                 ))}
             </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg-grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredSkills.map((skills, key) => (
                 <div key={key} className="bg-card p-6 rounded-lg shadow-xs card-hover">
                     <div className="text-left mb-4">

@@ -8,6 +8,7 @@ import { Project } from "../components/Project";
 import { Footer } from "../components/Footer";
 import { LightBackground } from "../components/LightBackground";
 import { useState } from "react";
+import { Contact } from "../components/Contact";
 
 export const Home = () => {
     const [isDark, setIsDark] = useState(false);
@@ -33,6 +34,7 @@ export const Home = () => {
                 <About/>
                 <Project/>
                 <Skills/>
+                <Contact/>
             </main>
 
             {/* Footer */}
