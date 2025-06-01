@@ -11,7 +11,7 @@ import { useState } from "react";
 import { Contact } from "../components/Contact";
 
 export const Home = () => {
-    const [isDark, setIsDark] = useState(false);
+    const [isDark, setIsDark] = useState(true);
 
     return  (
         <div className="min-h-screen bg-background text-foreground overflow-x-hidden">

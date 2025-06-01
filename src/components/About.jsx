@@ -23,7 +23,7 @@ export const About = () => {
                         <a href="https://www.linkedin.com/in/dz72/" target="_blank" className="cosmic-button">
                             Get in Touch
                         </a>
-                        <a href="src/assets/David_Zhang_CV.docx" target="_blank" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
+                        <a href="/David_Zhang_CV.docx" target="_blank" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
                             Download CV
                         </a>
                     </div>
